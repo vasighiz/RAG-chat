@@ -4,11 +4,11 @@ A Retrieval-Augmented Generation (RAG) system that uses local language models to
 
 ## Features
 
-- 🤖 Local LLM integration with Mistral 7B
-- 📚 Document processing and chunking
-- 🔍 Semantic search using FAISS
-- 💡 Interactive web interface with Streamlit
-- ⚙️ Adjustable parameters for fine-tuning responses
+-  Local LLM integration with Mistral 7B
+-  Document processing and chunking
+-  Semantic search using FAISS
+-  Interactive web interface with Streamlit
+-  Adjustable parameters for fine-tuning responses
 
 ## Installation
 
