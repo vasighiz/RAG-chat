@@ -22,8 +22,8 @@ wheels/
 
 # Virtual Environment
 venv/
-env/
 ENV/
+env/
 
 # IDE
 .idea/
@@ -32,10 +32,14 @@ ENV/
 *.swo
 
 # Project specific
+models/
 data/
-*.index
-*.pkl
+*.log
 .env
 
-# Logs
-*.log 
+# Streamlit
+.streamlit/
+
+# OS specific
+.DS_Store
+Thumbs.db 
