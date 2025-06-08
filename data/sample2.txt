@@ -1,0 +1,30 @@
+Machine Learning is a method of data analysis that automates analytical model building. It is a branch of artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention.
+
+Types of Machine Learning:
+
+1. Supervised Learning:
+   - Uses labeled training data
+   - Learns to map input to output
+   - Examples: Classification, Regression
+   - Common algorithms: Linear Regression, Decision Trees, Random Forest
+
+2. Unsupervised Learning:
+   - Works with unlabeled data
+   - Finds patterns and relationships
+   - Examples: Clustering, Dimensionality Reduction
+   - Common algorithms: K-means, PCA, DBSCAN
+
+3. Reinforcement Learning:
+   - Learns through trial and error
+   - Uses rewards and penalties
+   - Examples: Game playing, Robotics
+   - Common algorithms: Q-Learning, Policy Gradient
+
+Key Concepts:
+- Training Data: The dataset used to train the model
+- Features: Input variables used for prediction
+- Labels: Output variables to be predicted
+- Model: The algorithm that makes predictions
+- Hyperparameters: Parameters set before training
+- Overfitting: When model performs well on training data but poorly on new data
+- Underfitting: When model fails to capture the underlying pattern 

@@ -31,15 +31,17 @@ env/
 *.swp
 *.swo
 
-# Project specific
-models/
-data/
+# Model files
+models/*.gguf
+
+# Logs
 *.log
+
+# Local development
 .env
+.env.local
+.env.*.local
 
-# Streamlit
-.streamlit/
-
-# OS specific
+# OS
 .DS_Store
 Thumbs.db 

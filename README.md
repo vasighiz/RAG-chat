@@ -1,70 +1,89 @@
-# RAG Chat Interface
+# RAG System with Local LLM
 
-A Retrieval-Augmented Generation (RAG) system with a user-friendly web interface built using Streamlit.
+A Retrieval-Augmented Generation (RAG) system that uses local language models to answer questions based on your documents. This project implements a complete RAG pipeline with a user-friendly web interface.
 
 ## Features
 
-- 🤖 Powered by Mistral 7B Instruct model
-- 🔍 Efficient document retrieval using FAISS
-- 📝 Clean and intuitive web interface
-- 🔄 Real-time response generation
-- 📊 Context visualization
+- Local LLM integration using Mistral 7B Instruct model
+- Document processing and chunking
+- Vector search using FAISS
+- Sentence Transformers for embeddings
+- Modern Streamlit web interface
+- Adjustable parameters for fine-tuning responses
 
-## Setup
+## Installation
 
-1. Create a virtual environment:
+1. Clone the repository:
+```bash
+git clone https://github.com/vasighiz/RAG.git
+cd RAG
+```
+
+2. Create and activate a virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Download the model:
-```powershell
+4. Download the model:
+```bash
+# Create models directory
+mkdir models
+
+# Download Mistral model (Windows PowerShell)
 Invoke-WebRequest -Uri "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf" -OutFile "models/mistral-7b-instruct-v0.1.Q4_K_M.gguf"
 ```
 
-4. Place your documents in the `data` directory (supports .txt files)
-
 ## Usage
 
-1. Start the Streamlit app:
+1. Place your documents in the `data` directory (supports .txt files)
+
+2. Run the Streamlit app:
 ```bash
-streamlit run app.py
+streamlit run app/app.py
 ```
 
-2. Open your browser and navigate to the provided URL (usually http://localhost:8501)
+3. Open your browser and navigate to the provided URL (usually http://localhost:8501)
 
-3. Enter your questions in the chat interface and get AI-powered responses based on your documents
+4. Click "Initialize System" in the sidebar
 
-## System Parameters
-
-- Temperature: 0.1 (for focused responses)
-- Top-p: 0.9 (for controlled randomness)
-- Repetition Penalty: 1.2 (to reduce repetition)
-- Context Chunks: 3 (for comprehensive context)
-- Similarity Threshold: 0.7 (for relevant context)
+5. Enter your question and adjust parameters as needed
 
 ## Project Structure
 
 ```
-.
-├── app.py              # Streamlit web interface
-├── llm/               # Language model components
-│   ├── local_llm.py   # Local LLM implementation
-│   └── test_llm.py    # LLM testing script
-├── retriever/         # Document retrieval components
+RAG/
+├── app/
+│   └── app.py              # Streamlit web interface
+├── data/                   # Document storage
+├── llm/
+│   ├── local_llm.py       # LLM interface
+│   └── test_llm.py        # LLM testing
+├── models/                 # Model storage
+├── retriever/
 │   ├── document_processor.py  # Document processing
-│   └── embedding_store.py     # Embedding and search
-├── data/              # Document storage
-├── models/            # Model storage
-└── requirements.txt   # Project dependencies
+│   └── embedding_store.py     # Vector store
+├── requirements.txt        # Dependencies
+└── README.md              # Documentation
 ```
+
+## Configuration
+
+The system can be configured through the web interface:
+
+- **Max Tokens**: Control response length (100-1024)
+- **Temperature**: Adjust response creativity (0.0-1.0)
+- **Context Chunks**: Number of relevant chunks to use (1-5)
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests! 
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
