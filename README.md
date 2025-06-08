@@ -4,12 +4,11 @@ A Retrieval-Augmented Generation (RAG) system that uses local language models to
 
 ## Features
 
-- Local LLM integration using Mistral 7B Instruct model
-- Document processing and chunking
-- Vector search using FAISS
-- Sentence Transformers for embeddings
-- Modern Streamlit web interface
-- Adjustable parameters for fine-tuning responses
+- 🤖 Local LLM integration with Mistral 7B
+- 📚 Document processing and chunking
+- 🔍 Semantic search using FAISS
+- 💡 Interactive web interface with Streamlit
+- ⚙️ Adjustable parameters for fine-tuning responses
 
 ## Installation
 
@@ -60,21 +59,21 @@ streamlit run app/app.py
 RAG/
 ├── app/
 │   └── app.py              # Streamlit web interface
-├── data/                   # Document storage
 ├── llm/
-│   ├── local_llm.py       # LLM interface
-│   └── test_llm.py        # LLM testing
-├── models/                 # Model storage
+│   ├── local_llm.py        # Local LLM implementation
+│   └── test_llm.py         # LLM testing script
 ├── retriever/
-│   ├── document_processor.py  # Document processing
-│   └── embedding_store.py     # Vector store
-├── requirements.txt        # Dependencies
-└── README.md              # Documentation
+│   ├── document_processor.py # Document processing
+│   └── embedding_store.py    # Vector store implementation
+├── data/                   # Document storage
+├── models/                 # Model files
+├── requirements.txt        # Project dependencies
+└── README.md              # Project documentation
 ```
 
 ## Configuration
 
-The system can be configured through the web interface:
+The system can be configured through various parameters:
 
 - **Max Tokens**: Control response length (100-1024)
 - **Temperature**: Adjust response creativity (0.0-1.0)

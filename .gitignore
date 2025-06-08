@@ -37,11 +37,6 @@ models/*.gguf
 # Logs
 *.log
 
-# Local development
-.env
-.env.local
-.env.*.local
-
 # OS
 .DS_Store
 Thumbs.db 
