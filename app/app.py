@@ -15,8 +15,18 @@ from loguru import logger
 st.set_page_config(
     page_title="RAG System",
     page_icon="🤖",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
+
+# Custom CSS to make sidebar narrower
+st.markdown("""
+    <style>
+        [data-testid="stSidebar"][aria-expanded="true"]{
+            width: 200px !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # Initialize session state
 if 'initialized' not in st.session_state:
@@ -80,18 +90,6 @@ def main():
         """)
     
     # Main content
-    # Parameters
-    st.markdown("### Parameters")
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.session_state.max_tokens = st.slider("Max Tokens", 100, 1024, 512)
-    with col2:
-        st.session_state.temperature = st.slider("Temperature", 0.0, 1.0, 0.1, 0.1)
-    with col3:
-        st.session_state.top_k = st.slider("Number of Context Chunks", 1, 5, 3)
-
-    st.markdown("---")
-
     # Query input with callback
     def on_enter():
         if st.session_state.query:
